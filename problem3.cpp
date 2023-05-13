@@ -17,6 +17,24 @@ public:
         name=n;
         gender=g;
     }
+        void setName(string n){
+        name=n;
+        }
+        string getName(){
+            return name;
+        }
+         void setAge(int a){
+           age=a;
+        }
+        int getAge(){
+            return age;
+        }
+        void setGender(string g){
+        gender=g;
+        }
+        string getGender(){
+        return gender;
+        }
     void ShowPersonInfo(){
         cout<<"Person Name:"<<name<<endl;
         cout<<"Person Age:"<<age<<endl;
@@ -56,27 +74,8 @@ class Teacher:public Person{
        int employeeId;
        string faculty;
     public:
-        /*
-        Teacher(){}
-        void setName(string n){
-        name=n;
-        }
-        string getName(){
-            return name;
-        }
-         void setAge(int a){
-           age=a;
-        }
-        int getAge(){
-            return age;
-        }
-        */
-         void setGender(string g){
-        gender=g;
-        }
-        string getGender(){
-            return gender;
-        }
+
+
         void setSalary(double s){
         salary=s;
         }
@@ -129,7 +128,8 @@ void ShowOfficerInfo(){
     ShowPersonInfo();
     cout<<"<OFFICER>"<<endl;
     cout<<"Basic Payment:"<<getPayment()<<endl;
-    cout<<"Overtime Payment:"<<overtime*20000<<endl;
+    cout<<"<Per Hour Overtime Payment: 2000 taka>"<<endl;
+    cout<<"Overtime Payment:"<<overtime*2000<<endl;
     cout<<"Total Payment:"<<(getPayment()+(2000.0*overtime))<<endl;
 }
 ~Officer(){
@@ -174,6 +174,14 @@ int main() {
     string Tfac;
     double Tsal;
     string Tgen;
+    string Tname;
+    int Tage;
+
+    cout<<"\t\tEnter Employee Name:";
+    cin.ignore();
+    getline(cin,Tname);
+    cout<<"\t\tEnter Employee Age:";
+    cin>>Tage;
     cout<<"\t\tEnter Employee Gender:";
     cin>>Tgen;
     cout<<"\t\tEnter Employee ID:";
@@ -181,7 +189,10 @@ int main() {
     cout<<"\t\tEnter Salary:";
     cin>>Tsal;
     cout<<"\t\tEnter Faculty:";
-  getline(cin,Tfac);
+    getline(cin,Tfac);
+    cout<<"\n\n\n";
+    t1.setName(Tname);
+    t1.setAge(Tage);
     t1.setEmployeeId(Tid);
     t1.setSalary(Tsal);
     t1.setGender(Tgen);
